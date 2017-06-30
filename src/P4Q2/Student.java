@@ -7,44 +7,53 @@ package P4Q2;
 
 /**
  *
- * @author Chek Wei
+ * @author Tan Chek Wei
+ *
  */
 public class Student {
 
-    String studentID, name;
-    int numberOfQuiz, totalQuizScore;
+    private String studentID, name;
+    private int numberOfQuiz, totalQuizScore;
 
     public Student() {
-
+        numberOfQuiz = 0;
+        totalQuizScore = 0;
     }
 
     public Student(String s, String n) {
         studentID = s;
         name = n;
+        numberOfQuiz = 0;
+        totalQuizScore = 0;
     }
-    
+
     //Accessors
-    public String getStudentID(){
+    public String getStudentID() {
         return studentID;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    
-    public int getNumberOfQuiz(){
+
+    public int getNumberOfQuiz() {
         return numberOfQuiz;
     }
-    
-    public int getTotalQuizScore(){
+
+    public int getTotalQuizScore() {
         return totalQuizScore;
     }
-    
-    //Mutators
-    public void setName(String n){
+
+    //Appropriate mutators
+    public void setStudentID(String id) {
+        studentID = id;
+    }
+
+    public void setName(String n) {
         name = n;
     }
-    
+
+    /*    
     public void setNumberofQuiz(int n){
         numberOfQuiz = n;
     }
@@ -52,17 +61,13 @@ public class Student {
     public void setTotalQuizScore(int t){
         totalQuizScore = t;
     }
-    
+     */
     public void addQuiz(int score) {
-        //????
+        totalQuizScore += score;
+        numberOfQuiz++;
     }
-    
-    public int getTotalScore(){
-        //??????
-        return totalQuizScore; //????;
-    }
-    
-    public double getAverageScore(){
-        return (double)totalQuizScore / numberOfQuiz;
+
+    public double getAverageScore() {
+        return (double) totalQuizScore / numberOfQuiz;
     }
 }

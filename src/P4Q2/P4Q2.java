@@ -31,7 +31,7 @@ public class P4Q2 {
         System.out.println("Student ID  : " + student1.getStudentID());
         System.out.println("Student name: " + student1.getName());
         System.out.println("Total score : " + student1.getTotalQuizScore());
-        System.out.println("Average     : " + student1.getAverageScore());
+        System.out.println("Average     : " + String.format("%.2f",student1.getAverageScore()));
         
         
         System.out.println("\nStudent 2:");
@@ -39,6 +39,13 @@ public class P4Q2 {
         System.out.println("Student ID  : " + student2.getStudentID());
         System.out.println("Student name: " + student2.getName());
         System.out.println("Total score : " + student2.getTotalQuizScore());
-        System.out.println("Average     : " + student2.getAverageScore());
+        System.out.println("Average     : " + String.format("%.2f",student2.getAverageScore()));
+        
+        if(student1.getTotalQuizScore() > student2.getTotalQuizScore())
+            System.out.println("\n" + student1.getName() + "'s total score is higher than " + student2.getName() + ".");
+        else if(student1.getTotalQuizScore() == student2.getTotalQuizScore())
+            System.out.println("\n" + student1.getName() + "'s total score is equal to " + student2.getName() + ".");
+        else
+            System.out.println("\n" + student2.getName() + "'s total score is higher than " + student1.getName() + ".");
     }
 }
